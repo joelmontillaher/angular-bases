@@ -9,8 +9,10 @@
         let isEven = even;
         let isOdd = odd;
         "
-        class="list-group-item">
-
+        class="list-group-item d-flex justify-content-between align-items-center"
+        [ngClass]="{'list-group-item-primary': isEven, 'list-group-item-dark': isLast}
+        ">
+      <div>
         <span class="text-primary">{{i}}. </span>
 
         <span>{{character.name}} - </span>
@@ -19,10 +21,8 @@
 
         <span>{{character.power}}</span>
 
-        <span> Es el primero: {{isFirts}}.</span>
-        <span> El Par es: {{isEven}}</span>
-        <span> El Impar es: {{isOdd}}</span>
-        <span> Es el último: {{isLast}}.</span>
+      </div>
+      <button class="btn btn-danger">X</button>
 
       </li>
 

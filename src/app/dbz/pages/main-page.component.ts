@@ -23,4 +23,9 @@ public characters: Character[] = [
   power:9200
 }
 ];
+
+onNewCharacter(character:Character): void {
+  this.characters.push(character);
+
+}
 }

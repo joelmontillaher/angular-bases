@@ -13,4 +13,9 @@ export class ListComponent {
     name:'Trunks',
     power:10
   }]
+
+
+ public onDelete(index):void{
+//TODO: Emitir el id del personaje
+ }
 }
