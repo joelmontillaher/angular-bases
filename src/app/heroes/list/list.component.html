@@ -1,0 +1,35 @@
+<h3 class="text-center">Listado de Héroes</h3>
+
+<!-- fem fervir el else i apliquem una clase que volguem
+per exemple: nothingWasDeleted, llavors aquesta clase la podema aplicar
+dins del nostre codi amb un #nothingWasDeleted -->
+
+<div *ngIf="deletedHero else nothingWasDeleted">
+
+  <h3>El héroe borrado es <small class="text-danger">{{ deletedHero }}</small></h3>
+
+</div>
+<!-- el ng template fa la funcio de div pero no el construeix, nomes
+  mostra el contingut, i amb el #nothingWasDeleted fem que no es vegi -->
+<ng-template #nothingWasDeleted>
+<h3>No ha borrado nada.</h3>
+</ng-template>
+
+<button
+  *ngIf="heroNames.length > 0"
+  (click)="removeLastHero()"
+  class="btn btn-outline-danger">
+  Borrar último héroe
+</button>
+
+<!-- el ng for fa que es repeteixin tots els heroes que he creat a list
+component sense la necesitat de crear tots els li per cada un d'ells -->
+
+<ul class="mt-2 list-group text-center">
+  <li
+
+    *ngFor="let name of heroNames"
+    class="list-group-item">
+    {{ name }}
+  </li>
+</ul>
